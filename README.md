@@ -29,3 +29,25 @@ This project was developed in Python using Jupyter Notebook.
 - OpenCV Headless 4.10.0.84
 
 The exact package versions used in the project are available in `requirements.txt`.
+
+## Dataset
+
+This project uses the IBM Telco Customer Churn dataset.
+
+The dataset contains information about 7,043 telecommunications customers and includes 21 columns covering customer demographics, account information, subscribed services, billing details, and whether the customer churned.
+
+Examples of features include:
+
+- Customer tenure
+- Contract type
+- Internet service
+- Monthly and total charges
+- Payment method
+- Tech support
+- Online security
+- Streaming services
+- Customer churn status
+
+The target variable is `Churn`, which indicates whether a customer left the company.
+
+**Dataset source:** IBM Telco Customer Churn dataset, accessed through Kaggle.
