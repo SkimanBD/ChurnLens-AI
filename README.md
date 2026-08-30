@@ -70,9 +70,17 @@ The models were evaluated using Accuracy, Precision, Recall, and F1 Score.
 | Random Forest | 78.4% | 61.9% | 48.1% | 54.1% |
 | XGBoost | 80.3% | **66.2%** | 52.4% | 58.5% |
 
+### Model Performance Comparison
+
+![Model Performance Comparison](images/model_comparison.png)
+
 Although standard Logistic Regression achieved the highest overall accuracy, the Balanced Logistic Regression model achieved the highest recall and F1 score.
 
 For this project, recall is especially important because the goal is to identify as many customers who are genuinely at risk of leaving as possible. For this reason, the Balanced Logistic Regression model was selected as the main churn prediction model.
+
+### Confusion Matrix
+
+![Balanced Logistic Regression Confusion Matrix](images/confusion_matrix.png)
 
 ## Key Findings
 
@@ -95,6 +103,14 @@ Prediction accuracy alone does not explain why a customer is considered a churn 
 SHAP was therefore used to interpret the Balanced Logistic Regression model at both the global and individual customer level.
 
 ### Global Explainability
+
+### SHAP Global Feature Importance
+
+![SHAP Global Feature Importance](images/shap_feature_importance.png)
+
+### SHAP Beeswarm Plot
+
+![SHAP Beeswarm Plot](images/shap_beeswarm.png)
 
 SHAP analysis showed that some of the most influential features included:
 
