@@ -153,3 +153,63 @@ A telecommunications company could use a system like ChurnLens AI to identify cu
 Instead of targeting every customer with retention offers, the company could focus its attention on customers with higher predicted churn risk and investigate the factors contributing to that risk.
 
 This could support more targeted retention strategies such as customer service outreach, contract incentives, service reviews, or personalised offers.
+
+## Project Structure
+
+    ChurnLens-AI/
+    │
+    ├── ChurnLens_AI.ipynb
+    ├── README.md
+    ├── requirements.txt
+    ├── .gitignore
+    │
+    ├── data/
+    │   ├── README.md
+    │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
+    │
+    └── images/
+        ├── README.md
+        ├── confusion_matrix.png
+        ├── model_comparison.png
+        ├── shap_beeswarm.png
+        └── shap_feature_importance.png
+
+
+## How to Run the Project
+
+1. Clone or download this repository.
+2. Install the required Python packages:
+
+       pip install -r requirements.txt
+
+3. Open `ChurnLens_AI.ipynb` in Jupyter Notebook.
+4. Run the notebook cells from top to bottom.
+
+The notebook contains the complete workflow, including data cleaning, exploratory data analysis, preprocessing, model training, model evaluation, and SHAP explainability.
+
+
+## Limitations
+
+- The project uses a single public telecommunications customer churn dataset.
+- Relationships identified in the data represent associations and should not be interpreted as direct causes of churn.
+- Model performance may differ when applied to customers from another company or a different dataset.
+- The project currently focuses on offline analysis rather than real-time prediction or production deployment.
+
+
+## Future Improvements
+
+- Perform hyperparameter tuning for models such as Random Forest and XGBoost.
+- Explore prediction threshold optimisation to improve the balance between precision and recall.
+- Test the approach using additional customer churn datasets.
+- Build an interactive interface where customer details can be entered to generate a churn-risk prediction.
+- Display an explanation of the factors contributing to an individual customer's churn risk.
+- Deploy the model as a small web application or API.
+
+
+## Conclusion
+
+ChurnLens AI demonstrates an end-to-end machine learning workflow for customer churn prediction with a strong focus on explainable AI.
+
+The project compares multiple machine learning approaches, identifies important churn patterns, and uses SHAP to explain both overall model behaviour and individual customer predictions.
+
+Rather than only predicting whether a customer may leave, ChurnLens AI demonstrates how machine learning can also provide understandable insights into the factors influencing that prediction.
