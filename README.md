@@ -51,3 +51,89 @@ Examples of features include:
 The target variable is `Churn`, which indicates whether a customer left the company.
 
 **Dataset source:** IBM Telco Customer Churn dataset, accessed through Kaggle.
+
+## Machine Learning Models
+
+Four machine learning approaches were evaluated:
+
+1. Logistic Regression
+2. Balanced Logistic Regression
+3. Random Forest
+4. XGBoost
+
+The models were evaluated using Accuracy, Precision, Recall, and F1 Score.
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 80.6% | 65.7% | 55.9% | 60.4% |
+| Balanced Logistic Regression | 73.8% | 50.4% | **78.3%** | **61.4%** |
+| Random Forest | 78.4% | 61.9% | 48.1% | 54.1% |
+| XGBoost | 80.3% | **66.2%** | 52.4% | 58.5% |
+
+Although standard Logistic Regression achieved the highest overall accuracy, the Balanced Logistic Regression model achieved the highest recall and F1 score.
+
+For this project, recall is especially important because the goal is to identify as many customers who are genuinely at risk of leaving as possible. For this reason, the Balanced Logistic Regression model was selected as the main churn prediction model.
+
+## Key Findings
+
+Exploratory analysis revealed several patterns associated with customer churn:
+
+- Customers with shorter tenure were significantly more likely to churn.
+- Month-to-month contracts had a much higher churn rate than one-year or two-year contracts.
+- Fiber optic customers showed a higher churn rate than DSL customers.
+- Customers using electronic check had a substantially higher churn rate than customers using other payment methods.
+- Customers without Tech Support or Online Security were more likely to churn.
+- Customers with longer-term contracts showed much lower churn rates.
+- Customers who churned had higher monthly charges on average.
+
+These relationships are associations observed in the dataset and should not be interpreted as direct causes of churn.
+
+## Explainable AI with SHAP
+
+Prediction accuracy alone does not explain why a customer is considered a churn risk.
+
+SHAP was therefore used to interpret the Balanced Logistic Regression model at both the global and individual customer level.
+
+### Global Explainability
+
+SHAP analysis showed that some of the most influential features included:
+
+- Customer tenure
+- Monthly charges
+- Total charges
+- Fiber optic internet service
+- Month-to-month contracts
+- Two-year contracts
+- Electronic check payments
+- Online security
+- Tech support
+
+The SHAP beeswarm analysis also shows whether different feature values push predictions toward churn or toward staying.
+
+### Individual Customer Explanation
+
+The model identified one test customer with a predicted churn probability of **93.78%**.
+
+This customer actually churned.
+
+Important characteristics included:
+
+- Tenure: 1 month
+- Contract: Month-to-month
+- Internet service: Fiber optic
+- Monthly charges: $95.10
+- Payment method: Electronic check
+- Tech support: No
+- Online security: No
+- Online backup: No
+- Device protection: No
+
+SHAP showed that very short tenure, a month-to-month contract, fiber optic internet, electronic check payment, and lack of support services were major factors pushing this prediction toward churn.
+
+## Business Use
+
+A telecommunications company could use a system like ChurnLens AI to identify customers who are at high risk of leaving.
+
+Instead of targeting every customer with retention offers, the company could focus its attention on customers with higher predicted churn risk and investigate the factors contributing to that risk.
+
+This could support more targeted retention strategies such as customer service outreach, contract incentives, service reviews, or personalised offers.
