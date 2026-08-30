@@ -14,3 +14,18 @@ The main goals of this project are to:
 - Build and compare multiple machine learning models.
 - Improve the detection of customers who are genuinely at risk of leaving.
 - Use SHAP explainability to understand both overall model behaviour and individual customer predictions.
+
+## Technologies & Libraries
+
+This project was developed in Python using Jupyter Notebook.
+
+- Python
+- pandas 2.0.3
+- NumPy 1.21.6
+- Matplotlib 3.5.2
+- scikit-learn 1.0.2
+- XGBoost 2.1.4
+- SHAP 0.49.1
+- OpenCV Headless 4.10.0.84
+
+The exact package versions used in the project are available in `requirements.txt`.
